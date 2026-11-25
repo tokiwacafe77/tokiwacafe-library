@@ -1,16 +1,1321 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ときわカフェ ― トキワくんとゆかいな仲間たち | リレー漫画・4コマ漫画が無料で読める</title>
-<meta name="description" content="ときわカフェは、全国の漫画家有志がつなぐリレー漫画のグループです。リレー漫画・短編漫画・リレー4コマ漫画・テーマイラストを、公式ホームページで無料で読めます。トキワくんとゆかいな仲間たちの活躍をお楽しみください。">
-<meta name="keywords" content="ときわカフェ,トキワくん,トキワくんとゆかいな仲間たち,リレー漫画,4コマ漫画,短編漫画,テーマイラスト,LINEスタンプ">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>ときわカフェ ― トキワくんとゆかいな仲間たち</title>
+<meta name="description" content="ときわカフェは、全国の漫画家有志がつなぐリレー漫画のグループです。リレー漫画・短編漫画・リレー4コマ漫画・テーマイラストを無料で読めます。トキワくんとゆかいな仲間たちの活躍をお楽しみください。" />
+<meta name="keywords" content="ときわカフェ,トキワくん,トキワくんとゆかいな仲間たち,リレー漫画,4コマ漫画,短編漫画,テーマイラスト,LINEスタンプ" />
+<meta property="og:title" content="ときわカフェ ― トキワくんとゆかいな仲間たち" />
+<meta property="og:description" content="ときわカフェは、全国の漫画家有志がつなぐリレー漫画のグループです。リレー漫画・短編漫画・リレー4コマ漫画・テーマイラストを無料で読めます。トキワくんとゆかいな仲間たちの活躍をお楽しみください。" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme: light dark;
+    --paper:#fffdf4;
+    --paper2:#ffffff;
+    --ink:#1a1a1a;
+    --ink2:#3d3d3d;
+    --line:#1a1a1a;
+    --accent:#0f7a4d;
+    --accent-bg:#e6f4ec;
+    --tag-bg:#fff3c4;
+    --tag-ink:#5a4300;
+    --done-bg:#e6f4ec;
+    --done-ink:#0f5c3a;
+    --serial-bg:#ffe9d6;
+    --serial-ink:#7a3d00;
+    --shadow:4px 4px 0 var(--line);
+    --dot:rgba(26,26,26,.08);
+    --header-bg:rgba(255,253,244,.96);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#17181c;
+      --paper2:#222329;
+      --ink:#f5f1e6;
+      --ink2:#d8d2c2;
+      --line:#f5f1e6;
+      --accent:#5fd39a;
+      --accent-bg:#1d3328;
+      --tag-bg:#3a3312;
+      --tag-ink:#ffe98a;
+      --done-bg:#1d3328;
+      --done-ink:#8fe6bb;
+      --serial-bg:#3d2a14;
+      --serial-ink:#ffc98a;
+      --shadow:4px 4px 0 rgba(0,0,0,.55);
+      --dot:rgba(255,255,255,.07);
+      --header-bg:rgba(23,24,28,.96);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image:radial-gradient(var(--dot) 1.1px, transparent 1.2px);
+    background-size:22px 22px;
+    color:var(--ink);
+    font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;
+    font-size:18px;
+    line-height:1.9;
+    -webkit-text-size-adjust:100%;
+  }
+  a{color:var(--accent); font-weight:700}
+  img{display:block; max-width:100%; height:auto}
+
+  /* ---------- header nav ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:40;
+    background:var(--header-bg);
+    border-bottom:3px solid var(--line);
+    backdrop-filter:blur(6px);
+  }
+  .topbar-inner{
+    max-width:920px; margin:0 auto; padding:10px 16px;
+    display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap;
+  }
+  .topbar nav{display:flex; flex-wrap:wrap; gap:4px 2px; justify-content:center}
+  .topbar nav a{
+    color:var(--ink); text-decoration:none; font-size:15px; font-weight:700;
+    padding:6px 10px; border-radius:999px; line-height:1.4;
+  }
+  .topbar nav a:hover, .topbar nav a:focus-visible{background:var(--accent-bg); outline:none}
+
+  .wrap{max-width:920px; margin:0 auto; padding:0 16px 64px}
+
+  /* ---------- hero ---------- */
+  .hero{text-align:center; padding:36px 0 8px}
+  .hero-logo{
+    width:min(440px,92%); margin:0 auto;
+  }
+  @media (prefers-color-scheme: dark){
+    .hero-logo{background:#fffdf4; border-radius:14px; padding:14px 18px}
+  }
+  .hero h1.subtitle{font-size:clamp(22px,6vw,30px); font-weight:900; letter-spacing:.04em; color:var(--ink); margin:20px 0 10px; line-height:1.5}
+  .hero .tagline{font-size:19px; font-weight:700; color:var(--ink2); margin:0}
+  .hero-main{
+    width:min(420px,88%); margin:26px auto 0;
+    border:3px solid var(--line); border-radius:16px; overflow:hidden;
+    box-shadow:var(--shadow); background:var(--paper2);
+  }
+  .hero-main img{width:100%}
+
+  /* ---------- sections ---------- */
+  section{margin-top:56px; scroll-margin-top:84px}
+  .sec-head{
+    display:flex; align-items:center; gap:12px; margin:0 0 20px;
+  }
+  .sec-head h2{
+    font-size:clamp(26px,6vw,34px); font-weight:900; line-height:1.4; margin:0;
+    border:3px solid var(--line); border-radius:10px; background:var(--paper2);
+    padding:8px 18px; box-shadow:var(--shadow);
+  }
+  .sec-lead{font-size:18px; color:var(--ink2); margin:0 0 20px}
+  .panel{
+    background:var(--paper2); border:2px solid var(--line); border-radius:14px;
+    padding:24px 22px;
+  }
+  .panel p{margin:0 0 1.1em}
+  .panel p:last-child{margin-bottom:0}
+  .story p{font-size:19px}
+
+  .rules-img{
+    border:2px solid var(--line); border-radius:12px; overflow:hidden; background:#fff;
+  }
+  .rules-img img{width:100%}
+
+  /* ---------- ときわカフェ誕生（4コマ） ---------- */
+  .tanjou{margin-top:36px}
+  .tanjou h3{
+    font-size:clamp(21px,5vw,26px); font-weight:900; line-height:1.5; margin:0 0 10px;
+  }
+  .tanjou .tanjou-lead{font-size:18px; color:var(--ink2); margin:0 0 18px}
+  .tanjou-open{
+    display:block; width:min(500px,100%); margin:0 auto; padding:0; cursor:pointer;
+    font:inherit; color:var(--ink); background:#fff;
+    border:2.5px solid var(--line); border-radius:12px; overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  .tanjou-open img{width:100%}
+  .tanjou-open:focus-visible{outline:4px solid var(--accent); outline-offset:3px}
+  .tanjou-hint{
+    text-align:center; font-size:15px; font-weight:700; color:var(--accent); margin:12px 0 0;
+  }
+  .ykv-nav.single{justify-content:center}
+
+  /* ---------- manga cards ---------- */
+  .grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:18px;
+  }
+  @media (min-width:720px){
+    .grid{grid-template-columns:repeat(3,1fr); gap:22px}
+  }
+  .work{
+    text-align:left; cursor:pointer; font:inherit; color:var(--ink);
+    background:var(--paper2); border:2.5px solid var(--line); border-radius:14px;
+    padding:0; overflow:hidden; box-shadow:var(--shadow);
+    display:flex; flex-direction:column; width:100%;
+  }
+  .work:focus-visible{outline:4px solid var(--accent); outline-offset:3px}
+  .work .cover{aspect-ratio:1/1; overflow:hidden; background:#f3efe2; border-bottom:2.5px solid var(--line)}
+  .work .cover img{width:100%; height:100%; object-fit:cover}
+  .work .meta{padding:14px 14px 16px; display:flex; flex-direction:column; gap:8px; flex:1}
+  .work .title{font-weight:900; font-size:19px; line-height:1.5}
+  .work .pages{font-size:14.5px; font-weight:700; color:var(--ink2); line-height:1.5}
+  .badge{
+    align-self:flex-start; font-size:14px; font-weight:900; line-height:1.4;
+    padding:3px 12px; border-radius:999px; border:2px solid var(--line);
+  }
+  .badge.done{background:var(--done-bg); color:var(--done-ink)}
+  .badge.serial{background:var(--serial-bg); color:var(--serial-ink)}
+  .work .read-hint{margin-top:auto; font-size:15px; font-weight:700; color:var(--accent)}
+
+  /* ---------- theme cards ---------- */
+  .work.theme .cover{aspect-ratio:4/3}
+
+  /* ---------- yonkoma ---------- */
+  .yk-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+  @media (min-width:720px){ .yk-grid{grid-template-columns:repeat(4,1fr); gap:20px} }
+  .yk-card{
+    text-align:left; cursor:pointer; font:inherit; color:var(--ink);
+    background:var(--paper2); border:2.5px solid var(--line); border-radius:14px;
+    padding:0; overflow:hidden; box-shadow:var(--shadow);
+    display:flex; flex-direction:column; width:100%;
+  }
+  .yk-card:focus-visible{outline:4px solid var(--accent); outline-offset:3px}
+  .yk-card .thumb{aspect-ratio:3/4; overflow:hidden; background:#fff; border-bottom:2.5px solid var(--line)}
+  .yk-card .thumb img{width:100%; height:100%; object-fit:cover; object-position:top center}
+  .yk-card .yk-meta{padding:10px 12px 12px; display:flex; flex-direction:column; gap:2px}
+  .yk-card .yk-no{font-size:13px; font-weight:900; color:var(--accent); line-height:1.4}
+  .yk-card .yk-title{font-weight:900; font-size:16.5px; line-height:1.5; overflow-wrap:anywhere}
+  .yk-card .yk-open{margin-top:6px; font-size:14px; font-weight:700; color:var(--accent)}
+
+  /* ---------- image viewer (4コマ・テーマ共通) ---------- */
+  .yk-viewer{
+    position:fixed; inset:0; z-index:110; display:none;
+    background:var(--paper); overflow-y:auto; overflow-x:hidden;
+    -webkit-overflow-scrolling:touch;
+  }
+  .yk-viewer.open{display:block}
+  .ykv-bar{
+    position:sticky; top:0; z-index:3; background:var(--header-bg);
+    border-bottom:3px solid var(--line); padding:12px 16px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .ykv-bar .v-title{font-weight:900; font-size:18px; line-height:1.4; flex:1; min-width:0}
+  .ykv-count{font-size:14px; font-weight:900; color:var(--ink2); white-space:nowrap}
+  .ykv-stage{max-width:560px; margin:0 auto; padding:20px 16px 8px}
+  .ykv-scroll{overflow:auto; border:2.5px solid var(--line); border-radius:12px; background:#fff; box-shadow:var(--shadow)}
+  .ykv-scroll img{
+    width:100%; display:block; margin:0 auto;
+    touch-action:pinch-zoom pan-x pan-y;
+  }
+  .ykv-scroll.zoomed img{width:200%; max-width:none}
+  /* 1コマ表示フレーム（4コマビューア専用） */
+  .ykv-frame{position:relative; overflow:hidden; background:#fff}
+  .ykv-scroll.zoomed .ykv-frame{overflow:visible}
+  .ykv-scroll.zoomed .tap-zone{display:none !important; pointer-events:none !important}
+  .ykv-panel-count{text-align:center; font-weight:900; font-size:17px; margin:14px 16px 0}
+  .ykv-hint{text-align:center; font-size:14px; color:var(--ink2); margin:12px 16px 0}
+  .ykv-nav{
+    position:sticky; bottom:0; z-index:3; background:var(--header-bg);
+    border-top:3px solid var(--line); padding:12px 16px;
+    display:flex; gap:10px; justify-content:space-between; align-items:center;
+    max-width:560px; margin:16px auto 0;
+  }
+  .ykv-nav button{
+    font:inherit; font-weight:900; font-size:16px; line-height:1.4; cursor:pointer;
+    background:var(--paper2); color:var(--ink); border:2.5px solid var(--line);
+    border-radius:999px; padding:10px 20px;
+  }
+  .ykv-nav button:disabled{opacity:.35; cursor:default}
+  .ykv-nav button:focus-visible{outline:4px solid var(--accent); outline-offset:2px}
+  .ykv-nav .to-list{background:var(--accent); color:#fff}
+  @media (prefers-color-scheme: dark){ .ykv-nav .to-list{color:#0d2418} }
+
+  /* ---------- stamps ---------- */
+  .stamp-grid{display:grid; grid-template-columns:1fr; gap:18px}
+  @media (min-width:640px){ .stamp-grid{grid-template-columns:repeat(3,1fr)} }
+  .stamp{
+    background:var(--paper2); border:2.5px solid var(--line); border-radius:14px;
+    padding:20px 16px; text-align:center; box-shadow:var(--shadow);
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+  }
+  .stamp img{width:120px; height:120px; object-fit:contain}
+  .stamp .s-name{font-weight:900; font-size:19px; line-height:1.5}
+  .stamp .s-price{font-weight:900; font-size:18px; background:var(--tag-bg); color:var(--tag-ink); border:2px solid var(--line); border-radius:999px; padding:2px 16px; line-height:1.5}
+  .stamp a.btn{
+    margin-top:4px; display:inline-block; background:var(--accent); color:#fff;
+    text-decoration:none; font-weight:900; font-size:16px; line-height:1.5;
+    padding:10px 20px; border-radius:999px; border:2.5px solid var(--line);
+  }
+  @media (prefers-color-scheme: dark){ .stamp a.btn{color:#0d2418} }
+
+  /* ---------- members ---------- */
+  .member-grid{display:grid; grid-template-columns:1fr; gap:18px}
+  @media (min-width:640px){ .member-grid{grid-template-columns:repeat(2,1fr)} }
+  .member{
+    background:var(--paper2); border:2.5px solid var(--line); border-radius:14px;
+    padding:20px; box-shadow:var(--shadow); display:flex; gap:16px; align-items:flex-start;
+  }
+  .member .icon{
+    flex:0 0 88px; width:88px; height:88px; border-radius:50%;
+    border:2.5px solid var(--line); object-fit:cover; background:#fff;
+  }
+  .member .body{min-width:0; flex:1}
+  .member h3{font-size:20px; font-weight:900; margin:0 0 2px; line-height:1.5; overflow-wrap:anywhere; word-break:break-word}
+  .member .role{
+    display:inline-block; font-size:14px; font-weight:900; line-height:1.4;
+    background:var(--tag-bg); color:var(--tag-ink); border:2px solid var(--line);
+    border-radius:999px; padding:2px 12px; margin:2px 0 8px;
+  }
+  .member dl{margin:0; font-size:16.5px; line-height:1.75}
+  .member dt{font-weight:900; display:inline}
+  .member dt::after{content:"："}
+  .member dd{display:inline; margin:0}
+  .member .row{display:block}
+  .member .comment{margin:10px 0 0; font-size:16.5px; line-height:1.8}
+  .member .site-link{display:inline-block; margin-top:10px; font-size:16px}
+
+  footer{
+    margin-top:64px; border-top:3px solid var(--line); padding-top:24px;
+    text-align:center; color:var(--ink2); font-size:15px;
+  }
+
+  /* ---------- manga reader (ページめくり) ---------- */
+  .reader{
+    position:fixed; inset:0; z-index:120; display:none;
+    background:var(--paper); flex-direction:column;
+  }
+  .reader.open{display:flex}
+  .reader-bar{
+    flex:0 0 auto; background:var(--header-bg);
+    border-bottom:3px solid var(--line); padding:10px 16px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .reader-bar .r-title{font-weight:900; font-size:17px; line-height:1.4; flex:1; min-width:0; overflow-wrap:anywhere}
+  .close-btn{
+    font:inherit; font-weight:900; font-size:16px; line-height:1.4; cursor:pointer;
+    background:var(--paper2); color:var(--ink); border:2.5px solid var(--line);
+    border-radius:999px; padding:8px 18px; white-space:nowrap;
+  }
+  .close-btn:focus-visible{outline:4px solid var(--accent); outline-offset:2px}
+  .reader-stage{
+    flex:1 1 auto; min-height:0; position:relative;
+    display:flex; align-items:stretch; justify-content:center;
+  }
+  .reader-scroll{
+    flex:1; overflow:auto; display:flex;
+    -webkit-overflow-scrolling:touch;
+  }
+  .reader-scroll img.page{
+    margin:auto; max-width:100%; max-height:100%; width:auto; height:auto;
+    object-fit:contain; background:#fff;
+    touch-action:pinch-zoom pan-x pan-y;
+  }
+  .reader-scroll.zoomed img.page{max-width:none; max-height:none; width:200%}
+  .reader-scroll video.page{
+    margin:auto; max-width:100%; max-height:100%; width:100%;
+    background:#000;
+  }
+  .reader-scroll [hidden]{display:none !important}
+  .tap-zone{
+    position:absolute; top:0; bottom:0; width:32%; z-index:2;
+    background:transparent; border:0; padding:0; cursor:pointer;
+  }
+  .tap-zone.left{left:0}
+  .tap-zone.right{right:0}
+  .tap-zone[hidden]{display:none !important; pointer-events:none !important}
+  .reader-stage.no-tap .tap-zone{display:none !important; pointer-events:none !important}
+  .tap-zone:focus-visible{outline:4px solid var(--accent); outline-offset:-4px}
+  .reader-end{
+    margin:auto; text-align:center; padding:32px 20px; display:none;
+  }
+  .reader-end.show{display:block}
+  .reader-end .big{font-size:24px; font-weight:900; margin:0 0 10px}
+  .reader-end p{margin:0 0 18px; color:var(--ink2); font-size:16.5px}
+  .reader-end button{
+    font:inherit; font-weight:900; font-size:16px; cursor:pointer;
+    background:var(--accent); color:#fff; border:2.5px solid var(--line);
+    border-radius:999px; padding:10px 24px; margin:0 4px;
+  }
+  @media (prefers-color-scheme: dark){ .reader-end button{color:#0d2418} }
+  .reader-foot{
+    flex:0 0 auto; background:var(--header-bg);
+    border-top:3px solid var(--line);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
+  .progress{
+    height:10px; border:2px solid var(--line); border-radius:999px;
+    background:var(--paper2); overflow:hidden;
+  }
+  .progress > i{display:block; height:100%; background:var(--accent); width:0%}
+  .reader-foot-row{
+    display:flex; align-items:center; gap:10px; margin-top:10px;
+  }
+  .reader-foot-row .counter{
+    flex:1; text-align:center; font-weight:900; font-size:16px; white-space:nowrap;
+  }
+  .reader-foot-row button{
+    font:inherit; font-weight:900; font-size:16px; line-height:1.4; cursor:pointer;
+    background:var(--paper2); color:var(--ink); border:2.5px solid var(--line);
+    border-radius:999px; padding:9px 20px; white-space:nowrap;
+  }
+  .reader-foot-row button:disabled{opacity:.35; cursor:default}
+  .reader-foot-row button:focus-visible{outline:4px solid var(--accent); outline-offset:2px}
+  .reader-hint{text-align:center; font-size:13.5px; color:var(--ink2); margin:8px 0 0}
+
+  /* ---------- episode picker（初代リレー漫画） ---------- */
+  .picker{
+    position:fixed; inset:0; z-index:115; display:none;
+    background:var(--paper); overflow-y:auto; -webkit-overflow-scrolling:touch;
+  }
+  .picker.open{display:block}
+  .picker-inner{max-width:680px; margin:0 auto; padding:20px 16px 64px}
+  .picker-bar{
+    position:sticky; top:0; z-index:2; background:var(--header-bg);
+    border-bottom:3px solid var(--line); margin:-20px -16px 20px; padding:12px 16px;
+    display:flex; align-items:center; gap:12px;
+  }
+  .picker-bar .p-title{font-weight:900; font-size:19px; line-height:1.4; flex:1; min-width:0}
+  .ep-list{display:grid; gap:12px}
+  .ep-btn{
+    text-align:left; cursor:pointer; font:inherit; color:var(--ink);
+    background:var(--paper2); border:2.5px solid var(--line); border-radius:14px;
+    padding:16px 18px; box-shadow:var(--shadow); width:100%;
+    display:flex; align-items:center; gap:14px;
+  }
+  .ep-btn:focus-visible{outline:4px solid var(--accent); outline-offset:3px}
+  .ep-btn .ep-no{font-weight:900; font-size:19px; line-height:1.4}
+  .ep-btn .ep-pages{font-size:14.5px; font-weight:700; color:var(--ink2)}
+  .ep-btn .ep-go{margin-left:auto; font-weight:900; color:var(--accent); font-size:15px; white-space:nowrap}
+</style>
 </head>
 <body>
-<h1>ときわカフェ ― トキワくんとゆかいな仲間たち</h1>
-<p>ときわカフェは、全国の漫画家有志がつなぐリレー漫画のグループです。リレー漫画、短編漫画、リレー4コマ漫画、テーマイラストを公式ホームページで無料で読めます。</p>
-<p><a href="https://muse.ai/s/tokiwakahue-xdt6zxrxtxlul7n/X4172lD5FaGHp71Zv51B2sMjjpwiDE571FfLE6WHhkk">ときわカフェ公式ホームページはこちら</a></p>
-<p>このページは、公式ホームページの画像ライブラリです。</p>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <nav aria-label="ページ内メニュー">
+      <a href="#story">あらすじ</a>
+      <a href="#about">について</a>
+      <a href="#relay">リレー漫画</a>
+      <a href="#short">短編漫画</a>
+      <a href="#yonkoma">4コマ</a>
+      <a href="#theme">テーマイラスト</a>
+      <a href="#stamps">スタンプ</a>
+      <a href="#members">メンバー</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap" id="top">
+
+  <!-- ヘッダー -->
+  <div class="hero">
+    <img class="hero-logo" src="assets/logo-tokiwacafe-transparent.webp" alt="ときわカフェ" />
+    <h1 class="subtitle">― トキワくんとゆかいな仲間たち ―</h1>
+    <p class="tagline">全国の漫画家有志によるリレー漫画グループ</p>
+    <div class="hero-main">
+      <img src="assets/main-tokiwa-kun.webp" alt="トキワくんのイラスト" />
+    </div>
+  </div>
+
+  <!-- あらすじ -->
+  <section id="story">
+    <div class="sec-head"><h2>あらすじ</h2></div>
+    <div class="panel story">
+      <p>宇宙の数多き星を行き渡る長い耳が特徴的な×××歳のトキワくんは、日々何事もなく平穏に過ごすために常に周りを同調することで自分の平和を保っているのである。</p>
+      <p>しかし、トキワくんは周りの理不尽な関わりを嫌がる。そんな生活を送っていたときはいつも人生をリセットする。</p>
+      <p>これまでのつながりも予定もない、誰にも縛られない楽しいはずの自由な生活。</p>
+      <p>しかし、やはり周りを気にしてしまうトキワくん。</p>
+      <p>トキワくんを追いかけてきた人や、そして新しく出会った人たちに囲まれながら、トキワくんの人生リセットストーリーが始まる。</p>
+    </div>
+  </section>
+
+  <!-- ときわカフェについて -->
+  <section id="about">
+    <div class="sec-head"><h2>ときわカフェについて</h2></div>
+    <p class="sec-lead">リレー漫画のルールと進め方です。画像をそのまま大きく載せています。</p>
+    <div class="rules-img">
+      <img src="assets/rules.webp" alt="ときわカフェのリレー漫画ルール説明" loading="lazy" />
+    </div>
+    <div class="tanjou">
+      <h3>4コマ漫画「ときわカフェ誕生」</h3>
+      <p class="tanjou-lead">ときわカフェがどうやって生まれたのかを描いた4コマです。このまま読めます。タップすると、さらに大きく表示されます。</p>
+      <button class="tanjou-open" id="tanjou-open" type="button" aria-label="4コマ漫画「ときわカフェ誕生」を大きく表示する">
+        <img src="/tokiwacafe-tanjou.webp" alt="4コマ漫画「ときわカフェ誕生」：東京都豊島区南長崎の木造アパート・トキワ荘に昭和を代表するマンガ家たちが暮らしていたこと、声掛けをきっかけに全国の漫画家が少しずつ集まり、みんなが気楽に遊びに来られる現代版のトキワカフェが誕生したことを描いた4コマ" />
+      </button>
+      <p class="tanjou-hint">▶ タップで大きく読む</p>
+    </div>
+  </section>
+
+  <!-- リレー漫画 -->
+  <section id="relay">
+    <div class="sec-head"><h2>リレー漫画</h2></div>
+    <p class="sec-lead">読みたい作品を選ぶと、このページの中でページをめくりながら読めます。登録やログインはいりません。</p>
+    <div class="grid" id="relay-grid"></div>
+  </section>
+
+  <!-- 短編漫画 -->
+  <section id="short">
+    <div class="sec-head"><h2>短編漫画</h2></div>
+    <p class="sec-lead">読みたい作品を選ぶと、このページの中でページをめくりながら読めます。</p>
+    <div class="grid" id="short-grid"></div>
+  </section>
+
+  <!-- リレー4コマ漫画 -->
+  <section id="yonkoma">
+    <div class="sec-head"><h2>リレー4コマ漫画</h2></div>
+    <p class="sec-lead">全61作品です。新しい作品から順に並んでいます。読みたい作品をタップすると、大きく表示されます。</p>
+    <div class="yk-grid" id="yk-grid"></div>
+  </section>
+
+  <!-- テーマイラスト -->
+  <section id="theme">
+    <div class="sec-head"><h2>テーマイラスト</h2></div>
+    <p class="sec-lead">テーマごとにメンバーが描いたイラスト集です。テーマを選ぶと、イラストを大きく見られます。</p>
+    <div class="grid" id="theme-grid"></div>
+  </section>
+
+  <!-- LINEスタンプ -->
+  <section id="stamps">
+    <div class="sec-head"><h2>LINEスタンプ</h2></div>
+    <p class="sec-lead">ときわカフェのLINEスタンプです。各120円で販売中です。</p>
+    <div class="stamp-grid">
+      <div class="stamp">
+        <img src="assets/stamp-1.webp" alt="LINEスタンプ「ときわカフェ トキワくん」" loading="lazy" />
+        <div class="s-name">ときわカフェ<br>トキワくん</div>
+        <div class="s-price">120円</div>
+        <a class="btn" href="https://store.line.me/stickershop/product/19210660/ja" target="_blank" rel="noopener">LINE STOREで見る</a>
+      </div>
+      <div class="stamp">
+        <img src="assets/stamp-2.webp" alt="LINEスタンプ「ときわカフェ 作者たち」" loading="lazy" />
+        <div class="s-name">ときわカフェ<br>作者たち</div>
+        <div class="s-price">120円</div>
+        <a class="btn" href="https://store.line.me/stickershop/product/20814463/ja" target="_blank" rel="noopener">LINE STOREで見る</a>
+      </div>
+      <div class="stamp">
+        <img src="assets/stamp-3.webp" alt="LINEスタンプ「ときわカフェ 登場キャラ」" loading="lazy" />
+        <div class="s-name">ときわカフェ<br>登場キャラ</div>
+        <div class="s-price">120円</div>
+        <a class="btn" href="https://store.line.me/stickershop/product/23402906/ja" target="_blank" rel="noopener">LINE STOREで見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- メンバー紹介 -->
+  <section id="members">
+    <div class="sec-head"><h2>ときわカフェのゆかいな仲間たち</h2></div>
+    <p class="sec-lead">ときわカフェのメンバー紹介です。</p>
+    <div class="member-grid" id="member-grid"></div>
+  </section>
+
+  <footer>
+    <p>ときわカフェ ― トキワくんとゆかいな仲間たち</p>
+  </footer>
+</div>
+
+<!-- 漫画リーダー（ページめくり） -->
+<div class="reader" id="reader" role="dialog" aria-modal="true" aria-label="漫画を読む画面">
+  <div class="reader-bar">
+    <div class="r-title" id="reader-title"></div>
+    <button class="close-btn" id="reader-episodes" type="button" hidden>話を選ぶ</button>
+    <button class="close-btn" id="reader-close" type="button">✕ 一覧に戻る</button>
+  </div>
+  <div class="reader-stage" id="reader-stage">
+    <div class="reader-scroll" id="reader-scroll">
+      <img class="page" id="reader-img" src="/F05-001.webp" alt="" />
+      <video class="page" id="reader-video" controls playsinline preload="none" poster="/F06-ai-video-poster.webp" hidden></video>
+      <div class="reader-end" id="reader-end">
+        <p class="big">おわり</p>
+        <p id="reader-end-text">最後まで読んでくれてありがとうございました。</p>
+        <button id="reader-again" type="button">最初から読む</button>
+        <button id="reader-end-close" type="button">一覧に戻る</button>
+      </div>
+    </div>
+    <button class="tap-zone left" id="tap-prev" type="button" aria-label="前のページ"></button>
+    <button class="tap-zone right" id="tap-next" type="button" aria-label="次のページ"></button>
+  </div>
+  <div class="reader-foot">
+    <div class="progress" aria-hidden="true"><i id="reader-bar-fill"></i></div>
+    <div class="reader-foot-row">
+      <button id="reader-prev" type="button">← 前へ</button>
+      <span class="counter" id="reader-counter"></span>
+      <button id="reader-next" type="button">次へ →</button>
+    </div>
+    <p class="reader-hint">右側タップで次のページ、左側タップで前のページ。ピンチ／ダブルタップで拡大できます。</p>
+  </div>
+</div>
+
+<!-- 初代リレー漫画 話を選ぶ画面 -->
+<div class="picker" id="picker" role="dialog" aria-modal="true" aria-label="話を選ぶ画面">
+  <div class="picker-inner">
+    <div class="picker-bar">
+      <div class="p-title">初代リレー漫画 ― 話を選んでください</div>
+      <button class="close-btn" id="picker-close" type="button">✕ 閉じる</button>
+    </div>
+    <div class="ep-list" id="ep-list"></div>
+  </div>
+</div>
+
+<!-- 4コマ拡大ビュー -->
+<div class="yk-viewer" id="yk-viewer" role="dialog" aria-modal="true" aria-label="4コマ漫画を読む画面">
+  <div class="ykv-bar">
+    <div class="v-title" id="ykv-title"></div>
+    <span class="ykv-count" id="ykv-count"></span>
+    <button class="close-btn" id="ykv-close" type="button">✕ 一覧に戻る</button>
+  </div>
+  <div class="ykv-stage">
+    <div class="ykv-scroll" id="ykv-scroll">
+      <div class="ykv-frame" id="ykv-frame">
+        <img id="ykv-img" src="/F01-001.webp" alt="" />
+        <button class="tap-zone left" id="ykv-tap-prev" type="button" aria-label="前のコマ"></button>
+        <button class="tap-zone right" id="ykv-tap-next" type="button" aria-label="次のコマ"></button>
+      </div>
+    </div>
+    <p class="ykv-panel-count" id="ykv-panel-count">1 / 4コマ</p>
+    <p class="ykv-hint">右側タップ／スワイプで次のコマ、左側タップで前のコマへ。ピンチ／ダブルタップで拡大できます</p>
+  </div>
+  <div class="ykv-nav">
+    <button id="ykv-prev" type="button">← 前へ</button>
+    <button id="ykv-list" class="to-list" type="button">一覧に戻る</button>
+    <button id="ykv-next" type="button">次へ →</button>
+  </div>
+</div>
+
+<!-- テーマイラスト拡大ビュー -->
+<div class="yk-viewer" id="tv-viewer" role="dialog" aria-modal="true" aria-label="テーマイラストを見る画面">
+  <div class="ykv-bar">
+    <div class="v-title" id="tv-title"></div>
+    <span class="ykv-count" id="tv-count"></span>
+    <button class="close-btn" id="tv-close" type="button">✕ 一覧に戻る</button>
+  </div>
+  <div class="ykv-stage">
+    <div class="ykv-scroll" id="tv-scroll">
+      <img id="tv-img" src="/F04-1.u624bu585au6cbbu866bu5148u751f-001.webp" alt="" />
+    </div>
+    <p class="ykv-hint">画像はピンチで拡大できます（ダブルタップでも拡大・縮小できます）</p>
+  </div>
+  <div class="ykv-nav">
+    <button id="tv-prev" type="button">← 前へ</button>
+    <button id="tv-list" class="to-list" type="button">一覧に戻る</button>
+    <button id="tv-next" type="button">次へ →</button>
+  </div>
+</div>
+
+<!-- ときわカフェ誕生 拡大ビュー -->
+<div class="yk-viewer" id="tanjou-viewer" role="dialog" aria-modal="true" aria-label="4コマ漫画「ときわカフェ誕生」を読む画面">
+  <div class="ykv-bar">
+    <div class="v-title">4コマ漫画「ときわカフェ誕生」</div>
+    <button class="close-btn" id="tanjou-close" type="button">✕ 閉じる</button>
+  </div>
+  <div class="ykv-stage">
+    <div class="ykv-scroll" id="tanjou-scroll">
+      <div class="ykv-frame" id="tanjou-frame">
+        <img id="tanjou-img" src="/tokiwacafe-tanjou.webp" alt="4コマ漫画「ときわカフェ誕生」：東京都豊島区南長崎の木造アパート・トキワ荘に昭和を代表するマンガ家たちが暮らしていたこと、声掛けをきっかけに全国の漫画家が少しずつ集まり、みんなが気楽に遊びに来られる現代版のトキワカフェが誕生したことを描いた4コマ" />
+        <button class="tap-zone left" id="tanjou-tap-prev" type="button" aria-label="前のコマ"></button>
+        <button class="tap-zone right" id="tanjou-tap-next" type="button" aria-label="次のコマ"></button>
+      </div>
+    </div>
+    <p class="ykv-panel-count" id="tanjou-panel-count">1 / 4コマ</p>
+    <p class="ykv-hint">右側タップ／スワイプで次のコマ、左側タップで前のコマへ。ピンチ／ダブルタップで拡大できます</p>
+  </div>
+  <div class="ykv-nav">
+    <button id="tanjou-prev" type="button">← 前へ</button>
+    <button id="tanjou-list" class="to-list" type="button">閉じる</button>
+    <button id="tanjou-next" type="button">次へ →</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  function esc(s){
+    return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+  }
+  function pad(n, w){
+    var s = String(n);
+    while (s.length < w) s = "0" + s;
+    return s;
+  }
+
+  /* ================= 作品データ ================= */
+  /* 漫画本編の画像・動画は外部ライブラリ（GitHub Pages）から読み込む */
+  var LIB = "/";
+  var relayWorks = [
+    { id:"torikui", lib:"F13", title:"鳥喰い", status:"完結", cover:"assets/pages/torikui/001.webp", pages:36 },
+    { id:"daibouken", lib:"F05", title:"トキワくんの大冒険", status:"完結", cover:"assets/cover-1.webp", pages:88 },
+    { id:"urashima", lib:"F02", title:"ギャグ漫画★浦島太郎", status:"完結", cover:"assets/cover-2.webp", pages:124 },
+    { id:"tokinonai", lib:"F11", title:"時のない世界へ", status:"完結", cover:"assets/cover-3.webp", pages:121 },
+    { id:"yukionna", lib:"F03", title:"ゆきおんな", status:"完結", cover:"assets/cover-4.webp", pages:136 },
+    { id:"furikaereba", lib:"F10", title:"きもだめし", status:"完結", cover:"assets/cover-5.webp", pages:67 },
+    { id:"koi", lib:"F09", title:"恋せよ！若い衆", status:"完結", cover:"assets/cover-6.webp", pages:72 },
+    { id:"momotaro", lib:"F08", title:"奇妙な昔話・桃太郎", status:"完結", cover:"assets/cover-7.webp", pages:8 },
+    { id:"shodai", title:"初代リレー漫画", status:"完結", cover:"assets/pages/shodai/e01/001.webp",
+      episodes:[7,7,7,7,7,6,6,7,8,9,10,11,10] }
+  ];
+  var shortWorks = [
+    { id:"tokiwatari", lib:"F12", title:"時渡り 時渡りの大妖怪編", status:"完結", cover:"assets/cover-8.webp", pages:21 },
+    { id:"deai", lib:"F06", title:"出逢い", status:"完結", cover:"assets/cover-9.webp", pages:20, video:true }
+  ];
+
+  function pagesText(work){
+    if (work.episodes) {
+      var total = 0;
+      work.episodes.forEach(function(n){ total += n; });
+      return "全" + work.episodes.length + "話・" + total + "ページ";
+    }
+    if (work.video) return work.pages + "ページ＋AI動画";
+    return "全" + work.pages + "ページ";
+  }
+
+  /* ================= 漫画リーダー ================= */
+  var reader = document.getElementById("reader");
+  var readerTitle = document.getElementById("reader-title");
+  var readerImg = document.getElementById("reader-img");
+  var readerVideo = document.getElementById("reader-video");
+  var readerEnd = document.getElementById("reader-end");
+  var readerScroll = document.getElementById("reader-scroll");
+  var readerCounter = document.getElementById("reader-counter");
+  var readerFill = document.getElementById("reader-bar-fill");
+  var readerPrev = document.getElementById("reader-prev");
+  var readerNext = document.getElementById("reader-next");
+  var readerEpBtn = document.getElementById("reader-episodes");
+  var tapPrev = document.getElementById("tap-prev");
+  var tapNext = document.getElementById("tap-next");
+  var stage = document.getElementById("reader-stage");
+
+  var R = { pages:[], index:0, title:"", fromPicker:false, lastFocus:null };
+
+  function pageSrc(work, n){
+    return LIB + work.lib + "-" + pad(n, 3) + ".webp";
+  }
+  function buildPages(work){
+    var pages = [];
+    for (var i = 1; i <= work.pages; i++) pages.push({ type:"image", src:pageSrc(work, i) });
+    if (work.video) pages.push({ type:"video", src:LIB + work.lib + "-ai-video.mp4" });
+    return pages;
+  }
+  function buildEpisodePages(epNo, count){
+    var pages = [];
+    for (var i = 1; i <= count; i++)
+      pages.push({ type:"image", src:LIB + "F07-u30eau30ecu30fcu30deu30f3u30ac" + epNo + "-" + pad(i, 3) + ".webp" });
+    return pages;
+  }
+
+  /* タップゾーンの有効／無効を一括で切り替える（動画ページ・おわり画面では確実に無効化する） */
+  function setTapZones(enabled){
+    [tapPrev, tapNext].forEach(function(z){
+      z.hidden = !enabled;
+      z.style.display = enabled ? "" : "none";
+      z.style.pointerEvents = enabled ? "" : "none";
+    });
+    stage.classList.toggle("no-tap", !enabled);
+  }
+
+  function setZoom(on){
+    readerScroll.classList.toggle("zoomed", on);
+    if (!on) { readerScroll.scrollTop = 0; readerScroll.scrollLeft = 0; }
+  }
+  function isZoomed(){ return readerScroll.classList.contains("zoomed"); }
+
+  function showPage(i){
+    var total = R.pages.length;
+    if (i < 0) i = 0;
+    if (i > total) i = total;
+    R.index = i;
+    setZoom(false);
+    readerScroll.scrollTop = 0;
+    readerScroll.scrollLeft = 0;
+    /* 動画から離れたら止める */
+    if (!readerVideo.hidden) { readerVideo.pause(); }
+    if (i >= total) {
+      /* おわり画面 */
+      readerImg.hidden = true;
+      readerVideo.hidden = true;
+      readerEnd.classList.add("show");
+      setTapZones(false);
+      readerCounter.textContent = total + " / " + total + " ページ";
+      readerFill.style.width = "100%";
+      readerPrev.disabled = false;
+      readerNext.disabled = true;
+      return;
+    }
+    readerEnd.classList.remove("show");
+    var page = R.pages[i];
+    if (page.type === "video") {
+      readerImg.hidden = true;
+      readerVideo.hidden = false;
+      if (readerVideo.getAttribute("src") !== page.src) readerVideo.src = page.src;
+      setTapZones(false);
+      readerCounter.textContent = (i + 1) + " / " + total + "（AI動画）";
+    } else {
+      readerVideo.hidden = true;
+      readerImg.hidden = false;
+      readerImg.src = page.src;
+      readerImg.alt = R.title + " " + (i + 1) + "ページ目";
+      setTapZones(true);
+      readerCounter.textContent = (i + 1) + " / " + total + " ページ";
+    }
+    readerFill.style.width = ((i + 1) / total * 100) + "%";
+    readerPrev.disabled = i === 0;
+    readerNext.disabled = false;
+    /* 次のページを先読み */
+    [i + 1, i + 2].forEach(function(j){
+      if (j < total && R.pages[j].type === "image") {
+        var pre = new Image();
+        pre.src = R.pages[j].src;
+      }
+    });
+  }
+  function nextPage(){ if (R.index < R.pages.length) showPage(R.index + 1); }
+  function prevPage(){ if (R.index > 0) showPage(R.index - 1); }
+
+  function startReader(title, pages, fromPicker){
+    R.pages = pages;
+    R.title = title;
+    R.fromPicker = !!fromPicker;
+    readerTitle.textContent = title;
+    readerEpBtn.hidden = !fromPicker;
+    reader.classList.add("open");
+    document.body.style.overflow = "hidden";
+    showPage(0);
+    document.getElementById("reader-close").focus();
+  }
+  function closeReader(){
+    if (!readerVideo.hidden) { readerVideo.pause(); }
+    reader.classList.remove("open");
+    document.body.style.overflow = "";
+    if (R.lastFocus && R.lastFocus.focus) R.lastFocus.focus();
+  }
+  function openWork(work){
+    R.lastFocus = document.activeElement;
+    if (work.episodes) { openPicker(); return; }
+    startReader(work.title, buildPages(work), false);
+  }
+
+  document.getElementById("reader-close").addEventListener("click", closeReader);
+  document.getElementById("reader-end-close").addEventListener("click", closeReader);
+  document.getElementById("reader-again").addEventListener("click", function(){ showPage(0); });
+  readerPrev.addEventListener("click", prevPage);
+  readerNext.addEventListener("click", nextPage);
+  readerEpBtn.addEventListener("click", function(){
+    closeReader();
+    openPicker();
+  });
+
+  /* タップでページめくり（ダブルタップはズーム切替のため少し待つ） */
+  var pendingTurn = null, lastStageTap = 0, suppressClickUntil = 0;
+  stage.addEventListener("click", function(e){
+    if (Date.now() < suppressClickUntil) return;
+    if (e.target === readerVideo) return;
+    if (readerEnd.classList.contains("show")) return;
+    var curPage = R.pages[R.index];
+    if (curPage && curPage.type === "video") return;
+    var now = Date.now();
+    if (now - lastStageTap < 320) {
+      lastStageTap = 0;
+      if (pendingTurn) { clearTimeout(pendingTurn); pendingTurn = null; }
+      var page = R.pages[R.index];
+      if (page && page.type === "image") setZoom(!isZoomed());
+      return;
+    }
+    lastStageTap = now;
+    if (isZoomed()) return;
+    var rect = stage.getBoundingClientRect();
+    var ratio = (e.clientX - rect.left) / rect.width;
+    var dir = 0;
+    if (ratio <= 0.4) dir = -1;
+    else if (ratio >= 0.6) dir = 1;
+    if (!dir) return;
+    pendingTurn = setTimeout(function(){
+      pendingTurn = null;
+      if (dir > 0) nextPage(); else prevPage();
+    }, 320);
+  });
+  tapPrev.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " ") { e.preventDefault(); prevPage(); } });
+  tapNext.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " ") { e.preventDefault(); nextPage(); } });
+
+  /* スワイプでページめくり（右へスワイプ＝次へ、左へスワイプ＝前へ） */
+  var touchX = null, touchY = null;
+  stage.addEventListener("touchstart", function(e){
+    if (e.touches.length === 1) { touchX = e.touches[0].clientX; touchY = e.touches[0].clientY; }
+    else { touchX = null; }
+  }, { passive:true });
+  stage.addEventListener("touchend", function(e){
+    if (touchX === null) return;
+    var t = e.changedTouches[0];
+    var dx = t.clientX - touchX, dy = t.clientY - touchY;
+    touchX = null;
+    if (Math.abs(dx) < 48 || Math.abs(dx) <= Math.abs(dy)) return;
+    if (e.target === readerVideo) return;
+    if (readerEnd.classList.contains("show")) return;
+    var curPageT = R.pages[R.index];
+    if (curPageT && curPageT.type === "video") return;
+    if (isZoomed()) return;
+    if (pendingTurn) { clearTimeout(pendingTurn); pendingTurn = null; }
+    suppressClickUntil = Date.now() + 500;
+    if (dx > 0) nextPage(); else prevPage();
+  }, { passive:true });
+  readerImg.addEventListener("dblclick", function(){ setZoom(!isZoomed()); });
+
+  /* ================= 初代リレー漫画：話を選ぶ ================= */
+  var picker = document.getElementById("picker");
+  var epList = document.getElementById("ep-list");
+  var shodaiWork = relayWorks.filter(function(w){ return w.id === "shodai"; })[0];
+  shodaiWork.episodes.forEach(function(count, idx){
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "ep-btn";
+    btn.innerHTML =
+      '<span class="ep-no">第' + (idx + 1) + '話</span>' +
+      '<span class="ep-pages">' + count + 'ページ</span>' +
+      '<span class="ep-go">▶ 読む</span>';
+    btn.addEventListener("click", function(){
+      picker.classList.remove("open");
+      startReader("初代リレー漫画 第" + (idx + 1) + "話", buildEpisodePages(idx + 1, count), true);
+    });
+    epList.appendChild(btn);
+  });
+  function openPicker(){
+    picker.classList.add("open");
+    document.body.style.overflow = "hidden";
+    picker.scrollTop = 0;
+    document.getElementById("picker-close").focus();
+  }
+  function closePicker(){
+    picker.classList.remove("open");
+    if (!reader.classList.contains("open")) document.body.style.overflow = "";
+    if (R.lastFocus && R.lastFocus.focus) R.lastFocus.focus();
+  }
+  document.getElementById("picker-close").addEventListener("click", closePicker);
+
+  /* ================= 作品カード ================= */
+  function buildGrid(elId, works){
+    var grid = document.getElementById(elId);
+    works.forEach(function(work){
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "work";
+      var badgeClass = work.status === "連載中" ? "serial" : "done";
+      btn.innerHTML =
+        '<span class="cover"><img src="' + work.cover + '" alt="' + esc(work.title) + ' の表紙" loading="lazy" /></span>' +
+        '<span class="meta">' +
+          '<span class="title">' + esc(work.title) + '</span>' +
+          '<span class="badge ' + badgeClass + '">' + work.status + '</span>' +
+          '<span class="pages">' + pagesText(work) + '</span>' +
+          '<span class="read-hint">▶ このページで読む</span>' +
+        '</span>';
+      btn.addEventListener("click", function(){ openWork(work); });
+      grid.appendChild(btn);
+    });
+  }
+  buildGrid("relay-grid", relayWorks);
+  buildGrid("short-grid", shortWorks);
+
+  /* ================= メンバー ================= */
+  var members = [
+    { name:"ときわくん", icon:"assets/member-tokiwa-kun.webp", text:"出生地も年齢も不詳。外見は哺乳類のようだが、一説によれば地球外から来たとも言われている。様々な世界に現れて、問題を解決するために人助けをする。小さいが身体能力に優れ、空を飛ぶなどの超常能力を持つ。", intro:true },
+    { name:"平本龍之介（ひらもとりゅうのすけ）", role:"★部長★", icon:"assets/member-hiramoto-new.webp", from:"東京都", live:"福岡県", hobby:"海外旅行", fav:"鳥山明", comment:"読者を笑顔にする漫画を描きたいと思います。", site:"https://www.hiraryu.net/" },
+    { name:"ケン", role:"★副部長★", icon:"assets/member-kuroinu.webp", from:"神奈川県", live:"東京都", hobby:"温泉", fav:"手塚治虫", comment:"フォォオオオ･･･" },
+    { name:"ちゅう", role:"★副部長★", icon:"assets/member-chuu.webp", from:"福岡県", live:"福岡県", hobby:"演劇鑑賞", fav:"萩尾望都、浦沢直樹", comment:"しばらく 漫画から遠のいていました。また色々読んでみたいし、描いていきたいです。", site:"https://cocokarashine.com/" },
+    { name:"筆コアラ（ふでこあら）", role:"★副部長★", icon:"assets/member-fude-koara.webp", from:"福岡県", live:"福岡県", hobby:"書道", fav:"鳥山明", comment:"私たちの漫画活動を知ってもらうために、最高な絵を描けたらいいなと思います。" },
+    { name:"松谷琢也（まつたにたくや）", icon:"assets/member-matsutani.webp", from:"奈良県", live:"奈良県", hobby:"旅行", fav:"手塚治虫", comment:"漫画家、映画監督ですが、よろしくお願い致します。", site:"https://ameblo.jp/i-love-deaf-taku/" },
+    { name:"仁・実（じん・みのる）", icon:"assets/member-jin-minoru.webp", from:"千葉県", live:"千葉県", hobby:"食べ歩き", fav:"鳥山明", comment:"映像関連全てに日本語字幕をつけろおお！としょっちゅう吠えております。", site:"https://ameblo.jp/bear2000happy/" },
+    { name:"miyuki", icon:"assets/member-miyuki.webp", from:"静岡県", live:"静岡県", hobby:"スポーツ", fav:"手塚治虫", comment:"近所のhero君の紹介でこういうグループを知りました。目で見る力がかなりありそうですね♪" },
+    { name:"てぎてぎの実（てぎてぎのみ）", icon:"assets/member-tegitegi.webp", from:"福岡県", live:"福岡県", hobby:"昼寝", fav:"たくさんいます", comment:"誰よりも漫画を愛していますｗ" },
+    { name:"ほしのえみこ", icon:"assets/member-hoshino.webp", from:"埼玉県", live:"埼玉県", hobby:"ネット", fav:"山岸涼子", comment:"超無名ですが、漫画歴23年です。ちょっぴりな大人な雑誌で仕事してます。買える勇気のある方には雑誌名をお教えいたします。" },
+    { name:"ほたて饅頭（ほたてまんじゅう）", icon:"assets/member-hotate.webp", from:"山口県", live:"千葉県", hobby:"探検・冒険", fav:"池上遼一", comment:"漫画に関しては経験が全くないので、ド素人ですが、よろしく～" },
+    { name:"み～", icon:"assets/member-mii.webp", from:"岡山県", live:"岡山県", hobby:"映画制作", fav:"手塚治虫", comment:"手話漫才で全国を回っているので、絵を描く機会が減っています･･･" },
+    { name:"桜俊（おうしゅん）", icon:"assets/member-oushun.webp", from:"愛知県", live:"愛知県", hobby:"人と違った事をする", fav:"天野義孝", comment:"苦手なギャグ漫画、パロディ絵にもトライしてみようと思い、トキワカフェ参加を決めました！超遅筆ではありますが皆様どうぞよろしくお願い致しますね！", site:"https://peraichi.com/landing_pages/view/silentiai" },
+    { name:"まえだひろこ", icon:"assets/member-maeda.webp", from:"福岡県", live:"兵庫県", hobby:"お絵描き", fav:"荒川弘、こうの史代", comment:"OL時代、日本ろう者漫画倶楽部と漫食卵で11年間活動したことがありました。今は主婦とイラストレーターをやっています。よろしくお願いします。" },
+    { name:"たまき", icon:"assets/member-tamaki.webp", from:"岡山県", live:"岡山県", hobby:"模索中", fav:"弘兼憲史", comment:"漫画に関しては井の中の蛙です。優しいアドバイスをよろしくお願いします。" },
+    { name:"パプア服部（ぱぷあはっとり）", icon:"assets/member-papua.webp", from:"岡山県", live:"岡山県", hobby:"映画鑑賞", fav:"手塚治虫", comment:"内向思考な若者たちを海外に向かわせるような漫画を描きたいと思います。", site:"https://papuahattori.com/" },
+    { name:"近藤茜（こんどうあかね）", icon:"assets/member-kondo.webp", from:"福岡県", live:"福岡県", hobby:"イラストを描くこと、ランニング、料理", fav:"佐々木倫子、羽海野チカ", comment:"漫画は初挑戦です！楽しく成長したいと思います！", site:"http://oekakiakane.pecori.jp/" },
+    { name:"バーバラ", icon:"assets/member-barbara.webp", from:"福岡県", live:"福岡県", hobby:"妄想", fav:"望月峯太郎 鳥山明 つげ義春 その他いろいろ", comment:"マンガとエロスが好きです。" },
+    { name:"take", icon:"assets/member-take.webp", from:"福岡県", live:"福岡県", hobby:"イラストを描くこと、料理(巻き寿司が一番得意)", fav:"水木しげる", comment:"人々に楽しんでもらえる作品を描いていきたいと思います。" },
+    { name:"さとりん", icon:"assets/member-satorin.webp", from:"静岡県", live:"福岡県", hobby:"多種多様", fav:"藤子不二雄、ゆうきまさみ その他いろいろ", comment:"マンガ歴趣味程度ですが、仕事でトイレの説明書の注意書きの漫画を描いていました笑" },
+    { name:"星羅（せいら）", icon:"assets/member-seira.webp", from:"帝都", live:"ダサイタマ", hobby:"手芸、100均巡り、カフェ巡り", fav:"今は居ないが、あえてあげるなら一条ゆかり、美内すずえかなぁ。", comment:"30年近く絵を描いてなくて今ようやくを描くきっかけを掴み、錆びてしまった腕を磨き直そうと思いました(*^^*)" },
+    { name:"桐田孝美（きりたたかみ）", icon:"assets/member-kirita.webp", from:"広島県", live:"広島県", hobby:"ジム、グルメ巡り", fav:"山田参助、森由岐子", comment:"昔、日本ろう者漫画倶楽部に所属していましたが、ここでみなさんと活動できることが嬉しいです。楽しんで描いていきましょう。" },
+    { name:"花唐草", icon:"assets/member-hanakarakusa.webp", from:"佐賀県", live:"福岡県久留米市", hobby:"美術鑑賞、旅行、シマエナガ集め", fav:"諸星大二郎、山岸凉子、李志清、鄭問", comment:"小さい頃、兄の影響で少年漫画をよく読み、歴史漫画や劇画が好き。あとはブラックユーモアも好きでたまには描いています。漫画他、イラストも描いています。" },
+    { name:"michico ist", icon:"assets/member-michico.webp", from:"福岡県", live:"福岡県", hobby:"絵を描きながら人の話を聞く事", favLabel:"好きな写真家", fav:"蜷川実花", comment:"絵というより柄を描くのが好きです。" },
+    { name:"今浪カラス", icon:"assets/member-imanami.webp", from:"福岡県", live:"愛知県", hobby:"読書、作品制作", fav:"黒田硫黄、つげ義春、宮崎夏次系", comment:"「理解不能」を恐れないことが、何でも合理化されるこの時代において重要な態度ではないか。" }
+  ];
+
+  var mgrid = document.getElementById("member-grid");
+  members.forEach(function(m){
+    var card = document.createElement("article");
+    card.className = "member";
+    var html = '<img class="icon" src="' + esc(m.icon) + '" alt="' + esc(m.name) + ' のアイコン" loading="lazy" /><div class="body">';
+    html += '<h3>' + esc(m.name) + '</h3>';
+    if (m.role) html += '<span class="role">' + esc(m.role) + '</span>';
+    if (m.intro) {
+      html += '<p class="comment" style="margin-top:4px">' + esc(m.text) + '</p>';
+    } else {
+      html += '<dl>';
+      html += '<span class="row"><dt>出身地</dt><dd>' + esc(m.from) + '</dd></span>';
+      html += '<span class="row"><dt>在住地</dt><dd>' + esc(m.live) + '</dd></span>';
+      html += '<span class="row"><dt>趣味</dt><dd>' + esc(m.hobby) + '</dd></span>';
+      html += '<span class="row"><dt>' + esc(m.favLabel || "好きな漫画家") + '</dt><dd>' + esc(m.fav) + '</dd></span>';
+      html += '</dl>';
+      html += '<p class="comment">' + esc(m.comment) + '</p>';
+      if (m.site) html += '<a class="site-link" href="' + esc(m.site) + '" target="_blank" rel="noopener">→ サイトを見る</a>';
+    }
+    html += '</div>';
+    card.innerHTML = html;
+    mgrid.appendChild(card);
+  });
+  var yonkoma = [["01-drive", "ブラックサンタクロース"], ["02-drive", "肌寒い秋の日"], ["03-drive", "なにしてんの？"], ["04-drive", "斬っても？"], ["05-drive", "不良はこわい？"], ["06-drive", "昔、今、未来の正月"], ["07-drive", "ひな祭りボンバイエ！"], ["08-drive", "崩れない顔"], ["09-drive", "鍵穴が…。"], ["10-chikakuniiru", "近くにいる！！"], ["11-drive", "人差し指は世界を救うか？"], ["12-drive", "気候変動への適応"], ["13-drive", "でかっ！"], ["14-drive", "想い出はあなたの傍に"], ["15-drive", "10月といえば、、、"], ["16-drive", "サンタクロース"], ["17-drive", "4人目のデビュー!?"], ["18-drive", "旅は相棒と一緒"], ["19-drive", "社畜のバレンタイン"], ["20-drive", "内閣総理大臣賞？"], ["21-drive", "問題"], ["22-drive", "UDトークお助けマン"], ["23-drive", "変…携帯電話？"], ["24-drive", "スポーツ？"], ["25-drive", "視力検査"], ["26-drive", "仮面ライダーのベルトあるある"], ["27-drive", "丑三つ時"], ["28-drive", "サンプル♡"], ["29-drive", "3D AI画像生成？！"], ["30-drive", "ドラマの話"], ["31-drive", "追憶"], ["32-drive", "どうする!?トイレ…"], ["33-drive", "防災用グッズ準備"], ["34-drive", "今日は何の日？"], ["35-drive", "ギャップ"], ["36-drive", "えっちょっと待って"], ["37-drive", "見つめるその先は"], ["38-drive", "目標！"], ["39-drive", "間に合った…夢？"], ["40-drive", "緊急手術！？"], ["41-drive", "たまや・☆"], ["42-drive", "まおうは元恋人"], ["43-yushu-takuhai", "優秀な宅配業者"], ["44-goshimei", "ご指名"], ["45-bikkuri", "びっくりしたな〜もう！"], ["46-toubou", "逃亡"], ["47-kimattaze", "決まったぜ！"], ["48-drive", "あなたの歯を守ります！"], ["49-drive", "入社式は波乱のはじまり"], ["50-drive", "見かけによらず"], ["51-drive", "退院祝い"], ["52-drive", "ねこに弥栄♡"], ["53-drive", "絶品料理"], ["54-drive", "今日はセブンの日"], ["55-tsukare", "憑かれ…"], ["56-drive", "初夢？!"], ["57-drive", "うぶなキリンが、、"], ["58-drive", "個性的"], ["59-drive", "永久機関"], ["60-drive", "黒蜥蜴"], ["61-drive", "耳の中までお見通し♥"]];
+  var themes = [{"id": "t01", "lib": "F04-1.u624bu585au6cbbu866bu5148u751f", "name": "手塚治虫先生", "count": 6}, {"id": "t02", "lib": "F04-2.u30deu30eau30aa", "name": "マリオ", "count": 4}, {"id": "t03", "lib": "F04-3.u30adu30e7u30f3u30b7u30fc", "name": "キョンシー", "count": 4}, {"id": "t04", "lib": "F04-4u30cfu30edu30a6u30a3u30f3", "name": "ハロウィン", "count": 5}, {"id": "t05", "lib": "F04-5u30afu30eau30b9u30deu30b9", "name": "クリスマス", "count": 4}, {"id": "t06", "lib": "F04-7.u7bc0u5206", "name": "節分", "count": 5}, {"id": "t07", "lib": "F04-8.u5927u597du304du306au30b2u30fcu30e0", "name": "大好きなゲーム", "count": 8}, {"id": "t08", "lib": "F04-9.u79cb", "name": "秋", "count": 6}, {"id": "t09", "lib": "F04-10.u96fbu8eca", "name": "電車", "count": 4}, {"id": "t10", "lib": "F04-11.u30cfu30edu30a6u30a3u30f3", "name": "ハロウィン", "count": 5}, {"id": "t11", "lib": "F04-12.u30deu30a4u30d6u30fcu30e0", "name": "マイブーム", "count": 5}, {"id": "t12", "lib": "F04-13.u4e09u6d66u5148u751fu8ffdu60bc", "name": "三浦先生追悼", "count": 3}, {"id": "t13", "lib": "F04-14.2022u5e74u8cc0", "name": "2022年賀", "count": 11}, {"id": "t14", "lib": "F04-15.2023", "name": "2023", "count": 7}, {"id": "t15", "lib": "F04-16.u30cfu30edu30a6u30a3u30f3", "name": "ハロウィン", "count": 2}, {"id": "t16", "lib": "F04-17u30afu30eau30b9u30deu30b9", "name": "クリスマス", "count": 25}, {"id": "t17", "lib": "F04-18.2024u5e74", "name": "2024年", "count": 14}, {"id": "t18", "lib": "F04-19.u7bc0u5206", "name": "節分", "count": 4}, {"id": "t19", "lib": "F04-u30a4u30e9u30b9u30c8u3000u30a2u30deu30d3u30a8", "name": "アマビエ", "count": 12}, {"id": "t20", "lib": "F04-u30a4u30e9u30b9u30c8u3000u5e74u8cc0u72b6_2017u5e74", "name": "年賀状 2017年", "count": 3}, {"id": "t21", "lib": "F04-u30a4u30e9u30b9u30c8u3000u5e74u8cc0u72b6_2020u5e74", "name": "年賀状 2020年", "count": 9}];
+
+  /* ================= 4コマ 1コマ表示の共通処理 ================= */
+  /* geom = [画像の幅, 画像の高さ, コマ境界×5（画像の高さに対する割合）]
+     境界は各画像のタイトル帯とコマ枠の位置から求めた実測値 */
+  var ykGeom = [[434,1280,0.1,0.32,0.538,0.76,0.976],[434,1280,0.105,0.323,0.541,0.761,0.97],[434,1280,0.105,0.323,0.541,0.761,0.97],[434,1280,0.101,0.32,0.538,0.76,0.975],[745,2197,0.102,0.321,0.538,0.76,0.975],[745,2197,0.102,0.321,0.538,0.76,0.975],[745,2197,0.102,0.321,0.538,0.76,0.975],[434,1280,0.102,0.32,0.538,0.76,0.975],[434,1280,0.102,0.321,0.54,0.763,0.979],[434,1280,0.102,0.32,0.538,0.76,0.975],[745,2197,0.102,0.321,0.538,0.76,0.975],[745,2197,0.102,0.321,0.538,0.76,0.975],[745,2197,0.102,0.321,0.538,0.76,0.975],[434,1280,0.102,0.32,0.538,0.76,0.975],[434,1280,0.129,0.332,0.535,0.742,0.942],[434,1280,0.102,0.32,0.538,0.76,0.975],[434,1280,0.102,0.32,0.538,0.759,0.975],[434,1280,0.101,0.32,0.538,0.76,0.975],[434,1280,0.101,0.32,0.538,0.76,0.975],[434,1280,0.102,0.32,0.538,0.76,0.975],[401,1151,0.093,0.316,0.538,0.765,0.983],[434,1280,0.103,0.32,0.538,0.76,0.975],[434,1280,0.101,0.32,0.538,0.76,0.975],[434,1280,0.102,0.322,0.541,0.764,0.98],[434,1280,0.101,0.32,0.538,0.76,0.975],[434,1280,0.102,0.32,0.538,0.76,0.975],[434,1280,0.101,0.32,0.538,0.76,0.975],[434,1280,0.101,0.32,0.538,0.76,0.975],[745,2197,0.102,0.321,0.538,0.76,0.975],[434,1280,0.101,0.32,0.538,0.76,0.975],[434,1280,0.101,0.32,0.538,0.76,0.975],[434,1280,0.101,0.32,0.538,0.76,0.975],[745,2197,0.112,0.325,0.538,0.755,0.964],[434,1280,0.101,0.32,0.538,0.76,0.975],[434,1280,0.101,0.32,0.538,0.76,0.975],[434,1280,0.101,0.32,0.538,0.76,0.975],[739,2214,0.09,0.316,0.54,0.769,0.99],[745,2197,0.102,0.32,0.538,0.76,0.975],[745,2197,0.102,0.32,0.538,0.76,0.975],[745,2197,0.101,0.321,0.538,0.759,0.975],[745,2197,0.102,0.32,0.538,0.76,0.976],[745,2197,0.102,0.32,0.538,0.76,0.975],[905,1280,0.087,0.311,0.535,0.759,0.976],[905,1280,0.087,0.311,0.535,0.759,0.976],[905,1280,0.087,0.311,0.535,0.759,0.976],[450,1280,0.101,0.319,0.535,0.756,0.97],[450,1280,0.101,0.319,0.535,0.756,0.97],[745,2197,0.102,0.32,0.537,0.761,0.974],[450,1280,0.101,0.319,0.535,0.756,0.97],[450,1280,0.101,0.319,0.535,0.756,0.97],[450,1280,0.101,0.319,0.535,0.756,0.97],[450,1280,0.101,0.319,0.535,0.756,0.97],[745,2197,0.102,0.32,0.538,0.76,0.975],[450,1280,0.101,0.319,0.535,0.756,0.97],[745,2197,0.101,0.32,0.538,0.76,0.974],[745,2197,0.102,0.32,0.537,0.761,0.974],[745,2197,0.105,0.318,0.54,0.761,0.975],[745,2197,0.102,0.32,0.538,0.76,0.975],[745,2197,0.102,0.318,0.537,0.76,0.98],[729,2048,0.099,0.321,0.543,0.765,0.978],[498,1472,0.055,0.291,0.525,0.763,0.989]];
+  var tanjouGeom = [442,1338,0.114,0.334,0.553,0.773,0.986];
+
+  function makePanelViewer(opts){
+    var panel = 0;
+    var scroll = opts.scroll, frame = opts.frame, img = opts.img, scroller = opts.scroller;
+    function isZoomed(){ return scroll.classList.contains("zoomed"); }
+    function applyPanel(){
+      var g = opts.geom();
+      var top = g[2 + panel], slot = g[3 + panel] - top;
+      frame.style.aspectRatio = g[0] + " / " + (g[1] * slot).toFixed(1);
+      img.style.transform = "translateY(" + (-top * 100) + "%)";
+      opts.onPanel(panel);
+    }
+    function setZoom(on){
+      if (on === isZoomed()) { if (!on) applyPanel(); return; }
+      scroll.classList.toggle("zoomed", on);
+      if (on) {
+        var g = opts.geom();
+        var top = g[2 + panel], slot = g[3 + panel] - top;
+        frame.style.aspectRatio = "auto";
+        img.style.transform = "none";
+        requestAnimationFrame(function(){
+          var imgRect = img.getBoundingClientRect();
+          var scrRect = scroller.getBoundingClientRect();
+          var imgTop = imgRect.top - scrRect.top + scroller.scrollTop;
+          var y = imgTop + top * imgRect.height - Math.max(0, (scroller.clientHeight - slot * imgRect.height) / 2);
+          scroller.scrollTop = Math.max(0, y);
+        });
+      } else {
+        applyPanel();
+      }
+    }
+    function setPanel(p){
+      panel = Math.max(0, Math.min(3, p));
+      if (isZoomed()) scroll.classList.remove("zoomed");
+      applyPanel();
+    }
+    /* タップでコマ送り（ダブルタップはズーム切替のため少し待つ） */
+    var pending = null, lastTap = 0, suppressUntil = 0;
+    frame.addEventListener("click", function(e){
+      if (e.clientX === 0 && e.clientY === 0) return; /* キーボード由来のクリックはゾーン側で処理 */
+      if (Date.now() < suppressUntil) return;
+      var now = Date.now();
+      if (now - lastTap < 320) {
+        lastTap = 0;
+        if (pending) { clearTimeout(pending); pending = null; }
+        setZoom(!isZoomed());
+        return;
+      }
+      lastTap = now;
+      if (isZoomed()) return;
+      var rect = frame.getBoundingClientRect();
+      var ratio = (e.clientX - rect.left) / rect.width;
+      var dir = 0;
+      if (ratio <= 0.4) dir = -1;
+      else if (ratio >= 0.6) dir = 1;
+      if (!dir) return;
+      pending = setTimeout(function(){ pending = null; opts.step(dir); }, 320);
+    });
+    /* スワイプでコマ送り（右へスワイプ＝次へ、左へスワイプ＝前へ） */
+    var tx = null, ty = null;
+    frame.addEventListener("touchstart", function(e){
+      if (e.touches.length === 1) { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }
+      else tx = null;
+    }, { passive:true });
+    frame.addEventListener("touchend", function(e){
+      if (tx === null) return;
+      var t = e.changedTouches[0];
+      var dx = t.clientX - tx, dy = t.clientY - ty;
+      tx = null;
+      if (Math.abs(dx) < 48 || Math.abs(dx) <= Math.abs(dy)) return;
+      if (isZoomed()) return;
+      if (pending) { clearTimeout(pending); pending = null; }
+      suppressUntil = Date.now() + 500;
+      opts.step(dx > 0 ? 1 : -1);
+    }, { passive:true });
+    opts.tapPrev.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " ") { e.preventDefault(); opts.step(-1); } });
+    opts.tapNext.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " ") { e.preventDefault(); opts.step(1); } });
+    return {
+      getPanel: function(){ return panel; },
+      setPanel: setPanel,
+      reset: function(p){
+        panel = Math.max(0, Math.min(3, p || 0));
+        scroll.classList.remove("zoomed");
+        applyPanel();
+      }
+    };
+  }
+
+  /* ================= リレー4コマ漫画（全61作品） ================= */
+  function ykSrc(i){
+    return LIB + "F01-" + pad(i + 1, 3) + ".webp";
+  }
+  var ykGrid = document.getElementById("yk-grid");
+  /* 新しい作品（番号が大きい方）を前に表示する */
+  yonkoma.slice().reverse().forEach(function(item, revIdx){
+    var i = yonkoma.length - 1 - revIdx;
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "yk-card";
+    btn.setAttribute("aria-label", "4コマ漫画 " + (i + 1) + "「" + item[1] + "」を読む");
+    btn.innerHTML =
+      '<span class="thumb"><img src="' + ykSrc(i) + '" alt="" loading="lazy" /></span>' +
+      '<span class="yk-meta">' +
+        '<span class="yk-no">No.' + (i + 1) + '</span>' +
+        '<span class="yk-title">' + esc(item[1]) + '</span>' +
+        '<span class="yk-open">▶ 大きく読む</span>' +
+      '</span>';
+    btn.addEventListener("click", function(){ openYonkoma(i); });
+    ykGrid.appendChild(btn);
+  });
+
+  var ykViewer = document.getElementById("yk-viewer");
+  var ykvTitle = document.getElementById("ykv-title");
+  var ykvCount = document.getElementById("ykv-count");
+  var ykvImg = document.getElementById("ykv-img");
+  var ykvScroll = document.getElementById("ykv-scroll");
+  var ykvFrame = document.getElementById("ykv-frame");
+  var ykvPanelCount = document.getElementById("ykv-panel-count");
+  var ykvPrev = document.getElementById("ykv-prev");
+  var ykvNext = document.getElementById("ykv-next");
+  var ykIndex = 0;
+  var ykLastFocus = null;
+
+  function updateYkChrome(){
+    var p = ykPanels.getPanel();
+    ykvPanelCount.textContent = (p + 1) + " / 4コマ";
+    ykvImg.alt = "リレー4コマ漫画「" + yonkoma[ykIndex][1] + "」 " + (p + 1) + "コマ目";
+    ykvPrev.disabled = ykIndex === yonkoma.length - 1 && p === 0;
+    ykvNext.disabled = ykIndex === 0 && p === 3;
+  }
+  var ykPanels = makePanelViewer({
+    scroll: ykvScroll, frame: ykvFrame, img: ykvImg, scroller: ykViewer,
+    tapPrev: document.getElementById("ykv-tap-prev"),
+    tapNext: document.getElementById("ykv-tap-next"),
+    geom: function(){ return ykGeom[ykIndex]; },
+    onPanel: function(){ updateYkChrome(); },
+    step: function(dir){ if (dir > 0) ykNextPanel(); else ykPrevPanel(); }
+  });
+  function ykNextPanel(){
+    var p = ykPanels.getPanel();
+    if (p < 3) ykPanels.setPanel(p + 1);
+    else if (ykIndex > 0) showYonkoma(ykIndex - 1, 0);
+  }
+  function ykPrevPanel(){
+    var p = ykPanels.getPanel();
+    if (p > 0) ykPanels.setPanel(p - 1);
+    else if (ykIndex < yonkoma.length - 1) showYonkoma(ykIndex + 1, 3);
+  }
+  function showYonkoma(i, panel){
+    ykIndex = i;
+    var item = yonkoma[i];
+    ykvTitle.textContent = "No." + (i + 1) + " " + item[1];
+    ykvCount.textContent = (yonkoma.length - i) + " / " + yonkoma.length;
+    ykvImg.src = ykSrc(i);
+    ykViewer.scrollTop = 0;
+    ykPanels.reset(panel || 0);
+    [i - 1, i + 1].forEach(function(j){
+      if (j >= 0 && j < yonkoma.length) {
+        var pre = new Image();
+        pre.src = ykSrc(j);
+      }
+    });
+  }
+  function openYonkoma(i){
+    ykLastFocus = document.activeElement;
+    showYonkoma(i, 0);
+    ykViewer.classList.add("open");
+    document.body.style.overflow = "hidden";
+    document.getElementById("ykv-close").focus();
+  }
+  function closeYonkoma(){
+    ykViewer.classList.remove("open");
+    document.body.style.overflow = "";
+    if (ykLastFocus && ykLastFocus.focus) ykLastFocus.focus();
+  }
+  document.getElementById("ykv-close").addEventListener("click", closeYonkoma);
+  document.getElementById("ykv-list").addEventListener("click", closeYonkoma);
+  ykvPrev.addEventListener("click", ykPrevPanel);
+  ykvNext.addEventListener("click", ykNextPanel);
+
+  /* ================= テーマイラスト ================= */
+  var themeGrid = document.getElementById("theme-grid");
+  themes.forEach(function(theme, ti){
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "work theme";
+    btn.innerHTML =
+      '<span class="cover"><img src="' + themeSrc(theme, 0) + '" alt="テーマ「' + esc(theme.name) + '」のイラスト" loading="lazy" /></span>' +
+      '<span class="meta">' +
+        '<span class="title">' + esc(theme.name) + '</span>' +
+        '<span class="pages">' + theme.count + '枚</span>' +
+        '<span class="read-hint">▶ イラストを見る</span>' +
+      '</span>';
+    btn.addEventListener("click", function(){ openTheme(ti, 0); });
+    themeGrid.appendChild(btn);
+  });
+
+  var tvViewer = document.getElementById("tv-viewer");
+  var tvTitle = document.getElementById("tv-title");
+  var tvCount = document.getElementById("tv-count");
+  var tvImg = document.getElementById("tv-img");
+  var tvScroll = document.getElementById("tv-scroll");
+  var tvPrev = document.getElementById("tv-prev");
+  var tvNext = document.getElementById("tv-next");
+  var tvTheme = 0, tvIndex = 0;
+  var tvLastFocus = null;
+
+  function themeSrc(theme, n){
+    return LIB + theme.lib + "-" + pad(n + 1, 3) + ".webp";
+  }
+  function showThemeImage(i){
+    var theme = themes[tvTheme];
+    tvIndex = i;
+    tvTitle.textContent = theme.name;
+    tvCount.textContent = (i + 1) + " / " + theme.count;
+    tvImg.src = themeSrc(theme, i);
+    tvImg.alt = "テーマ「" + theme.name + "」のイラスト " + (i + 1) + "枚目";
+    tvScroll.classList.remove("zoomed");
+    tvScroll.scrollTop = 0;
+    tvScroll.scrollLeft = 0;
+    tvViewer.scrollTop = 0;
+    tvPrev.disabled = i === 0;
+    tvNext.disabled = i === theme.count - 1;
+    [i - 1, i + 1].forEach(function(j){
+      if (j >= 0 && j < theme.count) {
+        var pre = new Image();
+        pre.src = themeSrc(theme, j);
+      }
+    });
+  }
+  function openTheme(ti, i){
+    tvLastFocus = document.activeElement;
+    tvTheme = ti;
+    showThemeImage(i);
+    tvViewer.classList.add("open");
+    document.body.style.overflow = "hidden";
+    document.getElementById("tv-close").focus();
+  }
+  function closeTheme(){
+    tvViewer.classList.remove("open");
+    document.body.style.overflow = "";
+    if (tvLastFocus && tvLastFocus.focus) tvLastFocus.focus();
+  }
+  document.getElementById("tv-close").addEventListener("click", closeTheme);
+  document.getElementById("tv-list").addEventListener("click", closeTheme);
+  tvPrev.addEventListener("click", function(){ if (tvIndex > 0) showThemeImage(tvIndex - 1); });
+  tvNext.addEventListener("click", function(){ if (tvIndex < themes[tvTheme].count - 1) showThemeImage(tvIndex + 1); });
+  tvImg.addEventListener("dblclick", function(){ tvScroll.classList.toggle("zoomed"); });
+  var tvLastTap = 0;
+  tvImg.addEventListener("touchend", function(){
+    var now = Date.now();
+    if (now - tvLastTap < 350) { tvScroll.classList.toggle("zoomed"); }
+    tvLastTap = now;
+  });
+
+  /* ================= ときわカフェ誕生（拡大表示） ================= */
+  var tanjouViewer = document.getElementById("tanjou-viewer");
+  var tanjouImg = document.getElementById("tanjou-img");
+  var tanjouScroll = document.getElementById("tanjou-scroll");
+  var tanjouFrame = document.getElementById("tanjou-frame");
+  var tanjouPanelCount = document.getElementById("tanjou-panel-count");
+  var tanjouPrev = document.getElementById("tanjou-prev");
+  var tanjouNext = document.getElementById("tanjou-next");
+  var tanjouLastFocus = null;
+
+  var tjPanels = makePanelViewer({
+    scroll: tanjouScroll, frame: tanjouFrame, img: tanjouImg, scroller: tanjouViewer,
+    tapPrev: document.getElementById("tanjou-tap-prev"),
+    tapNext: document.getElementById("tanjou-tap-next"),
+    geom: function(){ return tanjouGeom; },
+    onPanel: function(p){
+      tanjouPanelCount.textContent = (p + 1) + " / 4コマ";
+      tanjouPrev.disabled = p === 0;
+      tanjouNext.disabled = p === 3;
+    },
+    step: function(dir){ if (dir > 0) tjNextPanel(); else tjPrevPanel(); }
+  });
+  function tjNextPanel(){
+    var p = tjPanels.getPanel();
+    if (p < 3) tjPanels.setPanel(p + 1);
+  }
+  function tjPrevPanel(){
+    var p = tjPanels.getPanel();
+    if (p > 0) tjPanels.setPanel(p - 1);
+  }
+  function openTanjou(){
+    tanjouLastFocus = document.activeElement;
+    tanjouViewer.scrollTop = 0;
+    tjPanels.reset(0);
+    tanjouViewer.classList.add("open");
+    document.body.style.overflow = "hidden";
+    document.getElementById("tanjou-close").focus();
+  }
+  function closeTanjou(){
+    tanjouViewer.classList.remove("open");
+    document.body.style.overflow = "";
+    if (tanjouLastFocus && tanjouLastFocus.focus) tanjouLastFocus.focus();
+  }
+  document.getElementById("tanjou-open").addEventListener("click", openTanjou);
+  document.getElementById("tanjou-close").addEventListener("click", closeTanjou);
+  document.getElementById("tanjou-list").addEventListener("click", closeTanjou);
+  tanjouPrev.addEventListener("click", tjPrevPanel);
+  tanjouNext.addEventListener("click", tjNextPanel);
+
+  /* ================= キーボード操作 ================= */
+  document.addEventListener("keydown", function(e){
+    if (reader.classList.contains("open")) {
+      if (e.key === "Escape") closeReader();
+      else if (e.key === "ArrowRight") nextPage();
+      else if (e.key === "ArrowLeft") prevPage();
+      return;
+    }
+    if (picker.classList.contains("open")) {
+      if (e.key === "Escape") closePicker();
+      return;
+    }
+    if (tvViewer.classList.contains("open")) {
+      if (e.key === "Escape") closeTheme();
+      else if (e.key === "ArrowLeft" && tvIndex > 0) showThemeImage(tvIndex - 1);
+      else if (e.key === "ArrowRight" && tvIndex < themes[tvTheme].count - 1) showThemeImage(tvIndex + 1);
+      return;
+    }
+    if (ykViewer.classList.contains("open")) {
+      if (e.key === "Escape") closeYonkoma();
+      else if (e.key === "ArrowLeft") ykPrevPanel();
+      else if (e.key === "ArrowRight") ykNextPanel();
+      return;
+    }
+    if (tanjouViewer.classList.contains("open")) {
+      if (e.key === "Escape") closeTanjou();
+      else if (e.key === "ArrowLeft") tjPrevPanel();
+      else if (e.key === "ArrowRight") tjNextPanel();
+    }
+  });
+})();
+</script>
 </body>
 </html>
