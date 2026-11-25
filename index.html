@@ -409,6 +409,27 @@
   .join-info h3:first-child{margin-top:0}
   .join-info ul{margin:0 0 .5em; padding-left:1.4em}
   .join-info p{margin:0 0 .8em}
+  .join-keybox{
+    background:var(--paper); border:3px solid var(--accent); border-radius:14px;
+    padding:16px 18px; margin:0 0 20px; font-weight:700;
+  }
+  .join-keybox strong{color:var(--accent)}
+  .join-steps{display:grid; gap:12px; margin:0 0 .5em}
+  .join-step{
+    display:flex; gap:14px; align-items:flex-start; background:var(--paper);
+    border:2px solid var(--line); border-radius:14px; padding:14px 16px;
+  }
+  .join-step-num{
+    flex:none; width:34px; height:34px; border-radius:50%; background:var(--accent); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-weight:900; font-size:17px;
+  }
+  .join-step h4{margin:0 0 4px; font-size:17px; font-weight:900}
+  .join-step p{margin:0}
+  .join-cards{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:0 0 .5em}
+  .join-card{background:var(--paper); border:2px solid var(--line); border-radius:14px; padding:14px 16px}
+  .join-card h4{margin:0 0 6px; font-size:17px; font-weight:900}
+  .join-card p{margin:0}
+  @media (max-width:640px){ .join-cards{grid-template-columns:1fr} }
   .join-doc{
     margin-top:28px; background:var(--paper2); border:3px solid var(--line);
     border-radius:6px; box-shadow:var(--shadow); padding:28px 24px;
@@ -569,23 +590,37 @@
     <div class="sec-head"><h2>入部案内</h2></div>
     <p class="sec-lead">ときわカフェでは、新しいメンバーを募集しています。聴者・ろう者・障害の有無に関係なく、誰でも募集しています。</p>
     <div class="panel join-info">
+      <div class="join-keybox">入部の条件は、<strong>LINEを持っていること</strong>です。入部が決まったら、LINEのグループに招待します。グループでは、それぞれ「先生」と呼び合っています。</div>
       <h3>入部条件</h3>
       <ul>
+        <li>LINEを持っている方（必須）</li>
         <li>常識のある方</li>
         <li>締め切りを守れる方</li>
-        <li>LINEを持っている方</li>
       </ul>
       <h3>どんなグループ？</h3>
       <p>かなりゆるーいグループです。私生活優先でOKです。</p>
-      <p>順番が回ってきたとき、やる・やらないは任意です。ただし、「やる」と言ったら締切は守ってください。締め切りは1週間を目安にしています。</p>
       <p>部費はかかりません。</p>
-      <p>入部したら、LINEのグループに招待します。グループでは、みんなお互いを「先生」と呼び合っています。</p>
-      <p>描き方は紙・デジタルどちらでもOKです。紙に描く方は、描いた絵を写メで撮って、LINEに貼り付けてください。</p>
       <h3>こんな方を歓迎します</h3>
       <ul>
         <li>絵を描くのが好きな人</li>
         <li>漫画やイラストのスキルを伸ばしたい方</li>
+        <li>聴者・ろう者・障害の有無に関係なく、どなたでも歓迎します</li>
       </ul>
+      <h3>入部後の流れ</h3>
+      <div class="join-steps">
+        <div class="join-step"><div class="join-step-num">1</div><div><h4>入部届を提出する</h4><p>下の入部届からお申し込みください。</p></div></div>
+        <div class="join-step"><div class="join-step-num">2</div><div><h4>LINEグループに招待します</h4><p>入部が決まったら、LINEのグループへご招待します。</p></div></div>
+        <div class="join-step"><div class="join-step-num">3</div><div><h4>「先生」と呼び合って活動スタート</h4><p>グループでは、それぞれ「先生」と呼び合っています。気軽に声をかけ合ってください。</p></div></div>
+      </div>
+      <h3>描き方 ― 紙・デジタルどちらも可能</h3>
+      <p>描き方は、紙でもデジタルでも、どちらでも大丈夫です。</p>
+      <div class="join-cards">
+        <div class="join-card"><h4>デジタルで描く方</h4><p>描いたデータを、LINEグループに貼り付けて提出してください。</p></div>
+        <div class="join-card"><h4>紙に描く方</h4><p>描いた絵を写メ（写真）に撮って、LINEグループに貼り付けて提出してください。</p></div>
+      </div>
+      <h3>締め切りについて</h3>
+      <p>締め切りは1週間を目安にしています。</p>
+      <p>順番が回ってきたとき、やる・やらないは任意です。ただし、「やる」と言ったら、締め切り（1週間を目安）は守ってください。</p>
     </div>
 
     <div class="join-doc">
