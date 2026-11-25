@@ -632,7 +632,7 @@
         <div class="join-stamp">部員<br>募集中</div>
       </div>
       <p class="join-doc-lead">入部を希望される方は、下の入部届に記入して提出してください。提出された内容は、部長のメールに届きます。</p>
-      <form class="join-form" id="join-form" novalidate>
+      <form class="join-form" id="join-form" method="POST" action="https://formsubmit.co/tokiwacafe77@gmail.com">
         <div class="field">
           <label for="join-name">お名前（ペンネーム可）<span class="req">必須</span></label>
           <input type="text" id="join-name" name="お名前" required autocomplete="name" />
@@ -658,6 +658,10 @@
           <textarea id="join-msg" name="ひとこと"></textarea>
         </div>
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+        <input type="hidden" name="_subject" value="【ときわカフェ】入部希望の届出がありました" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value="https://tokiwacafe.com/?sent=1#join" />
         <button type="submit" class="join-submit" id="join-submit">入部届を提出する</button>
         <p class="join-status" id="join-status" role="status"></p>
         <p class="join-note">※ 返信は数日かかる場合があります。うまく送れないときは、ときわカフェのSNSのDMからご連絡ください。</p>
@@ -1471,36 +1475,13 @@
   if(!form) return;
   var status = document.getElementById('join-status');
   var btn = document.getElementById('join-submit');
-  form.addEventListener('submit', function(ev){
-    ev.preventDefault();
-    if(!form.checkValidity()){ form.reportValidity(); return; }
-    status.textContent = '';
-    status.className = 'join-status';
+  if(/[?&]sent=1(&|$)/.test(location.search)){
+    status.textContent = '提出を受け付けました。ありがとうございます！ 内容を確認して、メールでお返事します。';
+    status.className = 'join-status ok';
+  }
+  form.addEventListener('submit', function(){
     btn.disabled = true;
     btn.textContent = '提出しています…';
-    var data = {};
-    new FormData(form).forEach(function(v, k){ data[k] = v; });
-    data['_subject'] = '【ときわカフェ】入部希望の届出がありました';
-    data['_template'] = 'table';
-    fetch('https://formsubmit.co/ajax/tokiwacafe77@gmail.com', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-      body: JSON.stringify(data)
-    }).then(function(r){ return r.json(); }).then(function(res){
-      if(res && (res.success === true || res.success === 'true')){
-        form.reset();
-        status.textContent = '提出を受け付けました。ありがとうございます！ 内容を確認して、メールでお返事します。';
-        status.className = 'join-status ok';
-        btn.textContent = '提出しました';
-      } else {
-        throw new Error('send failed');
-      }
-    }).catch(function(){
-      status.textContent = 'うまく送れませんでした。お手数ですが、ときわカフェのSNSのDMからご連絡ください。';
-      status.className = 'join-status err';
-      btn.disabled = false;
-      btn.textContent = '入部届を提出する';
-    });
   });
 })();
 </script>
